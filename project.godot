@@ -15,6 +15,10 @@ run/main_scene="uid://bsecaemkitoni"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Transition="*res://TransitionLayer/transition_layer.tscn"
+
 [input]
 
 UP={
