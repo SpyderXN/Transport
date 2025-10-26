@@ -1,25 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://ybdiy8euun0c"]
 
 [ext_resource type="Script" uid="uid://bpu8rvyut03q6" path="res://Player/player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://bdvejeqt6o10j" path="res://icon.svg" id="1_l8h54"]
+[ext_resource type="Texture2D" uid="uid://ne0007exejrj" path="res://Assets/PNG/Hitman 1/hitman1_silencer.png" id="2_4ntmi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ntmi"]
-size = Vector2(116, 115)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ntmi"]
+height = 40.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_4ntmi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5707964
-texture = ExtResource("1_l8h54")
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("2_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3.5)
-shape = SubResource("RectangleShape2D_4ntmi")
+position = Vector2(-12, 0)
+shape = SubResource("CapsuleShape2D_4ntmi")
 
 [node name="ShootMarker" type="Marker2D" parent="."]
 modulate = Color(0.18039216, 0.050980393, 1, 1)
-position = Vector2(78, 1)
+position = Vector2(27, 9)
 gizmo_extents = 28.3
 
 [node name="ShootTimer" type="Timer" parent="."]

@@ -1,4 +1,5 @@
 extends Node2D
+class_name Main
 
 var bullet_scene = preload("res://Bullet/bullet.tscn")
 @onready var spawns: Node2D = $Spawns

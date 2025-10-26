@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Enemy
 
 @onready var shoot_timer: Timer = $ShootTimer
 @onready var ray_cast: RayCast2D = $RayCast2D

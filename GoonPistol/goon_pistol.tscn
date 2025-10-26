@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://2mxdj7c0ayb"]
+
+[ext_resource type="PackedScene" uid="uid://gwyn3xkdynwb" path="res://Enemy/enemy.tscn" id="1_xyed7"]
+[ext_resource type="Script" uid="uid://ckteadf3fqbuu" path="res://GoonPistol/goon_pistol.gd" id="2_klh1y"]
+[ext_resource type="Texture2D" uid="uid://cllaopr6xfynx" path="res://Assets/PNG/Man Blue/manBlue_gun.png" id="3_hkoc1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hkoc1"]
+height = 42.0
+
+[node name="GoonPistol" instance=ExtResource("1_xyed7")]
+script = ExtResource("2_klh1y")
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = -1.5707964
+texture = ExtResource("3_hkoc1")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hkoc1")
+
+[node name="ShootTimer" parent="." index="2"]
+wait_time = 3.0
+
+[node name="Marker2D" parent="." index="3"]
+position = Vector2(10, -33)
