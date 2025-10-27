@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsthms57kmc52"]
+
+[ext_resource type="PackedScene" uid="uid://gwyn3xkdynwb" path="res://Enemy/enemy.tscn" id="1_es5c6"]
+[ext_resource type="Script" uid="uid://b72g3w8p2l7sx" path="res://GoonUzi/goon_uzi.gd" id="2_cudyg"]
+[ext_resource type="Texture2D" uid="uid://c3f12cbs3fset" path="res://Assets/PNG/Man Brown/manBrown_silencer.png" id="3_ad2ej"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_52ip4"]
+radius = 11.0
+height = 38.0
+
+[node name="GoonUzi" groups=["Enemy"] instance=ExtResource("1_es5c6")]
+script = ExtResource("2_cudyg")
+
+[node name="Sprite2D" parent="." index="0"]
+texture_filter = 1
+texture_repeat = 1
+rotation = -1.5707964
+texture = ExtResource("3_ad2ej")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_52ip4")
+
+[node name="Marker2D" parent="." index="3"]
+position = Vector2(10, -34)
