@@ -26,10 +26,12 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if not player:
 		return
-
+	
 	var direction = (player.global_position - global_position).normalized()
-	look_at(player.global_position)
-	rotation += deg_to_rad(90)
+	
+	if hit == false:
+		look_at(player.global_position)
+		rotation += deg_to_rad(90)
 	
 	ray_cast.force_raycast_update()
 
@@ -48,6 +50,8 @@ func _physics_process(_delta: float) -> void:
 	if hit != false:
 		sprite_2d.visible = false
 		sprite_2d_2.visible = true
+		can_shoot = false
+		shoot_timer.stop()
 		var tween = get_tree().create_tween()
 		tween.tween_property($".", "speed", 0, 1)
 
@@ -66,7 +70,7 @@ func _on_shoot_timer_timeout() -> void:
 	can_shoot = true
 
 
-func _on_detection_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Bullet"):
+func _on_detection_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Bullet"):
 		print("Enemy hit")
 		hit = true

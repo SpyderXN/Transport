@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://blkx7lfsfeygs"]
+
+[ext_resource type="PackedScene" uid="uid://cbs0fk1gcevpn" path="res://Light/light.tscn" id="1_h6nfu"]
+[ext_resource type="Texture2D" uid="uid://d2y7gosubxssn" path="res://Assets/PNG/Tiles/tile_498.png" id="2_h6nfu"]
+
+[sub_resource type="Gradient" id="Gradient_1aqsi"]
+offsets = PackedFloat32Array(0, 0.7916667, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.9166667, 0.9166667, 0.9166667, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_18puu"]
+gradient = SubResource("Gradient_1aqsi")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[node name="BlueLight" instance=ExtResource("1_h6nfu")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_h6nfu")
+
+[node name="PointLight2D" parent="." index="2"]
+position = Vector2(-28.999996, 0.50000113)
+scale = Vector2(0.6313131, 0.43665826)
+color = Color(0, 0.7294674, 0.72961205, 1)
+energy = 4.16
+texture = SubResource("GradientTexture2D_18puu")
+texture_scale = 2.97
