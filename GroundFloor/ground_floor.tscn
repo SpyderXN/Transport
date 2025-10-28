@@ -85,6 +85,7 @@ friction = 1000.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="4" groups=["Camera"]]
 position = Vector2(-14, -1)
+drag_horizontal_enabled = true
 script = ExtResource("5_k6j3j")
 max_shake = 30
 shake_fade = 30
